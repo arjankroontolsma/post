@@ -75,6 +75,10 @@ function download_and_install_ibm_db() {
   echo "Installing ibm_db2 ..."
   pecl install ibm_db2
 }
+
+function Install_curl() {
+  apt-get install php5-curl
+}
   
 # include .files when moving things around
 shopt -s dotglob
@@ -134,10 +138,12 @@ else
 fi
 
 
-
 # make php available on bin
 mkdir -p bin
 ln -s /app/php/bin/php bin/php
+
+echo "-------> installing CURL"
+Install_curl
 
 cat >>boot.sh <<EOF
 for var in \`env|cut -f1 -d=\`; do
