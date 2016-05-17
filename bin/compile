@@ -77,7 +77,14 @@ function download_and_install_ibm_db() {
 }
 
 function Install_curl() {
-  sudo apt-get install php5-curl
+  
+  MCurl_URL="http://curl.haxx.se/download/curl-7.36.0.tar.gz"  
+  curl --silent --max-time 60 --location "$MCurl_URL" | tar xz
+  rm *.gz
+  cd curl-7.6.0
+  ./configure
+  make
+  make install
 }
   
 # include .files when moving things around
