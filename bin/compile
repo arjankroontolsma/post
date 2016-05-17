@@ -78,10 +78,10 @@ function download_and_install_ibm_db() {
 
 function Install_curl() {
   
-  MCurl_URL="http://curl.haxx.se/download/curl-7.36.0.tar.gz"  
-  curl --silent --max-time 60 --location "$MCurl_URL" | tar xz
+   curl -LO http://curl.haxx.se/download/curl-7.36.0.tar.gz
+  tar -xvzf curl-7.36.0.tar.gz
   rm *.gz
-  cd curl-7.6.0
+  cd curl-7.36.0
   ./configure
   make
   make install
