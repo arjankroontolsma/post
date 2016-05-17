@@ -77,15 +77,7 @@ function download_and_install_ibm_db() {
 }
 
 function Install_curl() {
-  
-  curl -LO http://curl.haxx.se/download/curl-7.36.0.tar.gz
-  tar -xvzf curl-7.36.0.tar.gz
-  rm *.gz
-  pushd curl-7.36.0
-  ./configure
-  make -s
-  make install -s
-  popd
+  apt-get install php5-curl
 }
   
 # include .files when moving things around
