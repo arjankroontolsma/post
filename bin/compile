@@ -78,13 +78,14 @@ function download_and_install_ibm_db() {
 
 function Install_curl() {
   
-   curl -LO http://curl.haxx.se/download/curl-7.36.0.tar.gz
+  curl -LO http://curl.haxx.se/download/curl-7.36.0.tar.gz
   tar -xvzf curl-7.36.0.tar.gz
   rm *.gz
-  cd curl-7.36.0
+  pushd curl-7.36.0
   ./configure
-  make
-  make install
+  make -s
+  make install -s
+  popd
 }
   
 # include .files when moving things around
