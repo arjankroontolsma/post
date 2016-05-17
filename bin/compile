@@ -77,7 +77,7 @@ function download_and_install_ibm_db() {
 }
 
 function Install_curl() {
-  apt-get install php5-curl
+  sudo apt-get install php5-curl
 }
   
 # include .files when moving things around
@@ -142,8 +142,7 @@ fi
 mkdir -p bin
 ln -s /app/php/bin/php bin/php
 
-echo "-------> installing CURL"
-Install_curl
+
 
 cat >>boot.sh <<EOF
 for var in \`env|cut -f1 -d=\`; do
@@ -159,7 +158,12 @@ echo "Launching apache"
 exec /app/apache/bin/httpd -DNO_DETACH
 EOF
 
+echo "-------> installing CURL"
+Install_curl
+
 chmod +x boot.sh
+
+
 
 # clean the cache
 #rm -rf $CACHE_DIR
