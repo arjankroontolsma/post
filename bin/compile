@@ -158,11 +158,11 @@ echo "Launching apache"
 exec /app/apache/bin/httpd -DNO_DETACH
 EOF
 
-echo "-------> installing CURL"
-Install_curl
 
 chmod +x boot.sh
 
+echo "-------> installing CURL"
+Install_curl
 
 
 # clean the cache
