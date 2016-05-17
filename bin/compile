@@ -76,23 +76,6 @@ function download_and_install_ibm_db() {
   pecl install ibm_db2
 }
 
-function Install_curl() {
-  
-  
-  cd $BUILD_DIR
-  curl -LO http://curl.haxx.se/download/curl-7.36.0.tar.gz
-  tar -xvzf curl-7.36.0.tar.gz
-  rm *.gz
-  pushd curl-7.36.0
-  echo "-----> Configure Apache"
-  ./configure
-  echo "-----> Make Apache"
-  make -s
-  echo "-----> Make Install Apache"
-  make install -s
-  popd
-}
-  
 # include .files when moving things around
 shopt -s dotglob
 
@@ -173,9 +156,6 @@ EOF
 
 
 chmod +x boot.sh
-
-echo "-------> installing CURL"
-Install_curl
 
 
 # clean the cache
